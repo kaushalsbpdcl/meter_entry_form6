@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Meter Numbers and Data</title>
+<style>
+  /* ... (styling) ... */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+  }
+  th, td {
+    padding: 8px;
+    border: 1px solid #ccc;
+    text-align: center;
+  }
+  th {
+    background-color: #f2f2f2;
+  }
+  .edit-button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 3px;
+    cursor: pointer;
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <h2>Meter Numbers and Data</h2>
+  <table>
+    <tr>
+      <th>Meter Number</th>
+      <th>CA Number</th>
+      <th>Seal Number</th>
+      <th>Date of Installation</th>
+      <th>Action</th>
+    </tr>
+    <tr>
+      <td>6892245</td>
+      <td><input type="text" id="caNumber6892245"></td>
+      <td><input type="text" id="sealNumber6892245"></td>
+      <td><input type="date" id="dateInstallation6892245"></td>
+      <td><button class="edit-button" onclick="toggleEditMode(this)">Submit</button></td>
+    </tr>
+    <tr>
+      <td>6892246</td>
+      <td><input type="text" id="caNumber6892246"></td>
+      <td><input type="text" id="sealNumber6892246"></td>
+      <td><input type="date" id="dateInstallation6892246"></td>
+      <td><button class="edit-button" onclick="toggleEditMode(this)">Submit</button></td>
+    </tr>
+    <tr>
+      <td>6892247</td>
+      <td><input type="text" id="caNumber6892247"></td>
+      <td><input type="text" id="sealNumber6892247"></td>
+      <td><input type="date" id="dateInstallation6892247"></td>
+      <td><button class="edit-button" onclick="toggleEditMode(this)">Submit</button></td>
+    </tr>
+    <tr>
+      <td>6892248</td>
+      <td><input type="text" id="caNumber6892248"></td>
+      <td><input type="text" id="sealNumber6892248"></td>
+      <td><input type="date" id="dateInstallation6892248"></td>
+      <td><button class="edit-button" onclick="toggleEditMode(this)">Submit</button></td>
+    </tr>
+    <tr>
+      <td>6892249</td>
+      <td><input type="text" id="caNumber6892249"></td>
+      <td><input type="text" id="sealNumber6892249"></td>
+      <td><input type="date" id="dateInstallation6892249"></td>
+      <td><button class="edit-button" onclick="toggleEditMode(this)">Submit</button></td>
+    </tr>
+    <tr>
+      <td>6892250</td>
+      <td><input type="text" id="caNumber6892250"></td>
+      <td><input type="text" id="sealNumber6892250"></td>
+      <td><input type="date" id="dateInstallation6892250"></td>
+      <td><button class="edit-button" onclick="toggleEditMode(this)">Submit</button></td>
+    </tr>
+    <tr>
+      <td>6892251</td>
+      <td><input type="text" id="caNumber6892251"></td>
+      <td><input type="text" id="sealNumber6892251"></td>
+      <td><input type="date" id="dateInstallation6892251"></td>
+      <td><button class="edit-button" onclick="toggleEditMode(this)">Submit</button></td>
+    </tr>
+    <tr>
+      <td>6892252</td>
+      <td><input type="text" id="caNumber6892252"></td>
+      <td><input type="text" id="sealNumber6892252"></td>
+      <td><input type="date" id="dateInstallation6892252"></td>
+      <td><button class="edit-button" onclick="toggleEditMode(this)">Submit</button></td>
+    </tr>
+  </table>
+</div>
+
+<script>
+  function toggleEditMode(button) {
+    var row = button.parentNode.parentNode;
+    var cells = row.getElementsByTagName('td');
+    var actionCell = cells[4];
+
+    if (button.textContent === 'Submit') {
+      for (var i = 1; i < 4; i++) {
+        var input = cells[i].querySelector('input');
+        input.disabled = true;
+      }
+      button.textContent = 'Edit';
+    } else if (button.textContent === 'Edit') {
+      for (var i = 1; i < 4; i++) {
+        var input = cells[i].querySelector('input');
+        input.disabled = false;
+      }
+      button.textContent = 'Submit';
+    }
+  }
+</script>
+</body>
+</html>
